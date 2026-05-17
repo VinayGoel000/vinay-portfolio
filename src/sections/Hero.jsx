@@ -1,11 +1,14 @@
 import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import { FiDownload } from 'react-icons/fi'
+import { FiDownload, FiEye } from 'react-icons/fi'
 import { FaLinkedin } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
 import { SiLeetcode } from 'react-icons/si'
+import ActionButton from '../components/ActionButton.jsx'
 import ProfileImage from '../components/ProfileImage.jsx'
 import vinayFront from '../assets/vinay-front.jpeg'
+
+const resumeUrl = '/resume/VinayGoelResume.pdf'
 
 const roles = ['Full-stack Engineer', 'UI Architect', 'Digital Product Maker']
 
@@ -105,9 +108,12 @@ export default function Hero() {
                 })}
               </div>
               <div className="mt-6 flex flex-wrap gap-4">
-                <a href="/resume.pdf" download className="glow-button">
-                  <FiDownload className="mr-2" /> Download Resume
-                </a>
+                <ActionButton href={resumeUrl} icon={FiEye} className="min-w-[12rem] justify-center">
+                  View Resume
+                </ActionButton>
+                <ActionButton href={resumeUrl} icon={FiDownload} download className="min-w-[12rem] justify-center">
+                  Download Resume
+                </ActionButton>
                 <a href="#contact" className="inline-flex items-center justify-center rounded-full border border-slate-700/80 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-sky-400/40 hover:text-sky-200">
                   Let&apos;s connect
                 </a>
