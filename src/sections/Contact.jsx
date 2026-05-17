@@ -1,11 +1,29 @@
 import { motion } from 'framer-motion'
 import { FiSend } from 'react-icons/fi'
+import { FaLinkedin } from 'react-icons/fa'
+import { HiOutlineMail } from 'react-icons/hi'
+import { SiLeetcode } from 'react-icons/si'
 import SectionHeading from '../components/SectionHeading.jsx'
 
-const socials = [
-  { label: 'GitHub', href: 'https://github.com' },
-  { label: 'LinkedIn', href: 'https://linkedin.com' },
-  { label: 'Twitter', href: 'https://twitter.com' },
+const contactItems = [
+  {
+    label: 'Email',
+    href: 'mailto:work.vinaygoel@gmail.com',
+    detail: 'work.vinaygoel@gmail.com',
+    icon: HiOutlineMail,
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://linkedin.com/in/vinay-goel-691960278',
+    detail: 'linkedin.com/in/vinay-goel-691960278',
+    icon: FaLinkedin,
+  },
+  {
+    label: 'LeetCode',
+    href: 'https://leetcode.com/u/FvfnNjdyCP/',
+    detail: 'leetcode.com/u/FvfnNjdyCP',
+    icon: SiLeetcode,
+  },
 ]
 
 export default function Contact() {
@@ -14,7 +32,7 @@ export default function Contact() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading title="Contact" subtitle="Send a message or connect on social media." />
 
-        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -22,22 +40,37 @@ export default function Contact() {
             transition={{ duration: 0.7 }}
             className="glass-card p-8"
           >
-            <h3 className="text-2xl font-semibold text-white">Let’s build something premium.</h3>
-            <p className="mt-4 text-slate-300">
-              Share your idea or project brief and I’ll respond with a clean, modern solution aligned with your brand.
+            <span className="text-sm uppercase tracking-[0.3em] text-sky-300/80">Premium contact card</span>
+            <h3 className="mt-4 text-3xl font-semibold text-white">Connect with me directly.</h3>
+            <p className="mt-4 max-w-xl text-slate-300">
+              Choose the channel that fits your project. I’m available for technical collaborations, product builds, and consulting with a premium developer experience.
             </p>
-            <div className="mt-8 space-y-3">
-              {socials.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block rounded-3xl border border-white/10 bg-slate-900/80 px-5 py-4 text-base text-slate-100 transition hover:border-sky-400/40 hover:text-sky-200"
-                >
-                  {item.label}
-                </a>
-              ))}
+
+            <div className="mt-8 grid gap-4">
+              {contactItems.map((item) => {
+                const Icon = item.icon
+                return (
+                  <motion.a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.01, y: -1 }}
+                    className="group flex items-center justify-between rounded-[1.75rem] border border-white/10 bg-slate-950/80 px-5 py-5 text-left transition hover:border-sky-400/40 hover:bg-slate-900/95 hover:text-sky-200"
+                  >
+                    <span className="flex items-center gap-4">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-3xl bg-slate-900/90 text-sky-300 shadow-glow">
+                        <Icon className="h-6 w-6" />
+                      </span>
+                      <span>
+                        <span className="block text-base font-semibold text-white">{item.label}</span>
+                        <span className="block text-sm text-slate-400 break-all">{item.detail}</span>
+                      </span>
+                    </span>
+                    <span className="text-sky-300/90 text-sm">Open</span>
+                  </motion.a>
+                )
+              })}
             </div>
           </motion.div>
 

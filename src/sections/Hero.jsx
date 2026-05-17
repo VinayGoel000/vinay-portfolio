@@ -1,11 +1,31 @@
 import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { FiDownload } from 'react-icons/fi'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaLinkedin } from 'react-icons/fa'
+import { HiOutlineMail } from 'react-icons/hi'
+import { SiLeetcode } from 'react-icons/si'
 import ProfileImage from '../components/ProfileImage.jsx'
 import vinayFront from '../assets/vinay-front.jpeg'
 
 const roles = ['Full-stack Engineer', 'UI Architect', 'Digital Product Maker']
+
+const heroSocials = [
+  {
+    name: 'Email',
+    href: 'mailto:work.vinaygoel@gmail.com',
+    icon: HiOutlineMail,
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://linkedin.com/in/vinay-goel-691960278',
+    icon: FaLinkedin,
+  },
+  {
+    name: 'LeetCode',
+    href: 'https://leetcode.com/u/FvfnNjdyCP/',
+    icon: SiLeetcode,
+  },
+]
 
 export default function Hero() {
   const [text, setText] = useState('')
@@ -64,7 +84,27 @@ export default function Hero() {
               <p className="max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
                 A premium developer portfolio showcasing a clean, immersive dark UI with subtle glow and smooth motion.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                {heroSocials.map((item) => {
+                  const Icon = item.icon
+                  return (
+                    <motion.a
+                      key={item.name}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ y: -2, scale: 1.02 }}
+                      className="group inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-slate-950/75 px-4 py-3 text-sm text-slate-100 transition hover:border-sky-400/50 hover:bg-slate-900/95 hover:text-sky-200"
+                    >
+                      <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900/80 text-sky-300 shadow-glow">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <span className="font-medium">{item.name}</span>
+                    </motion.a>
+                  )
+                })}
+              </div>
+              <div className="mt-6 flex flex-wrap gap-4">
                 <a href="/resume.pdf" download className="glow-button">
                   <FiDownload className="mr-2" /> Download Resume
                 </a>
