@@ -7,13 +7,14 @@ const applications = [
   {
     name: 'Team Iron Champ',
     description:
-      'A Windows desktop automation and management tool designed for streamlined workflows, premium usability, and efficient operational control.',
+      'Team Iron Champ is a Windows desktop automation and management application designed for workflow efficiency, operational control, and premium desktop usability.',
     version: '1.8.0',
     features: [
-      'Automation tools',
-      'Fast desktop performance',
-      'User-friendly interface',
+      'Desktop automation tools',
+      'Fast performance',
       'Workflow optimization',
+      'User-friendly interface',
+      'Windows desktop support',
       'Regular updates',
     ],
     downloadLink:
@@ -28,7 +29,7 @@ export default function Applications() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           title="Applications"
-          subtitle="Desktop software showcases built for performance and premium workflow control."
+          subtitle="Premium desktop software showcases built for Windows, productivity, and modern release-ready workflows."
         />
 
         <motion.div
