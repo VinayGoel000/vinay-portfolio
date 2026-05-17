@@ -10,7 +10,7 @@ import vinayFront from '../assets/vinay-front.jpeg'
 
 const resumeUrl = '/resume/VinayGoelResume.pdf'
 
-const roles = ['Full-stack Engineer', 'UI Architect', 'Digital Product Maker']
+const roles = ['Java Web Developer', 'Full Stack Developer', 'Backend + Frontend', 'Scalable Web Applications']
 
 const heroSocials = [
   {
@@ -82,10 +82,10 @@ export default function Hero() {
               <h1 className="text-5xl font-semibold tracking-[-0.05em] text-white sm:text-6xl">
                 Hi, I’m Vinay.
                 <br />
-                I build polished digital experiences.
+                Java Full Stack Developer building scalable web applications.
               </h1>
               <p className="max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
-                A premium developer portfolio showcasing a clean, immersive dark UI with subtle glow and smooth motion.
+                I build modern, responsive web experiences with clean frontend interfaces and solid backend logic using Java, Spring Boot, SQL, and React.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 {heroSocials.map((item) => {

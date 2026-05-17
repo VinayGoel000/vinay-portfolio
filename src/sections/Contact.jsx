@@ -40,10 +40,10 @@ export default function Contact() {
             transition={{ duration: 0.7 }}
             className="glass-card p-8"
           >
-            <span className="text-sm uppercase tracking-[0.3em] text-sky-300/80">Premium contact card</span>
-            <h3 className="mt-4 text-3xl font-semibold text-white">Connect with me directly.</h3>
+            <span className="text-sm uppercase tracking-[0.3em] text-sky-300/80">Professional contact</span>
+            <h3 className="mt-4 text-3xl font-semibold text-white">Let’s discuss your next web application.</h3>
             <p className="mt-4 max-w-xl text-slate-300">
-              Choose the channel that fits your project. I’m available for technical collaborations, product builds, and consulting with a premium developer experience.
+              Reach out for Java web development, full-stack project collaboration, or recruiter inquiries. I’m available for roles that value scalable, responsive applications.
             </p>
 
             <div className="mt-8 grid gap-4">

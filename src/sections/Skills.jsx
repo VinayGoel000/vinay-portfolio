@@ -2,16 +2,18 @@ import { motion } from 'framer-motion'
 import SectionHeading from '../components/SectionHeading.jsx'
 import SkillCard from '../components/SkillCard.jsx'
 import ProfileImage from '../components/ProfileImage.jsx'
-import { SiReact, SiTailwindcss, SiFramer, SiNodedotjs, SiTypescript, SiVite } from 'react-icons/si'
+import { SiJava, SiSpringboot, SiMysql, SiReact, SiTailwindcss, SiGithub, SiPostman, SiNodedotjs } from 'react-icons/si'
 import vinayFront from '../assets/vinay-side.jpeg'
 
 const skills = [
-  { title: 'React & UI Components', detail: 'Reusable UI systems with responsive behavior and motion.', icon: SiReact },
-  { title: 'Tailwind CSS', detail: 'Modern utility-first styling with glassmorphism and vivid glow effects.', icon: SiTailwindcss },
-  { title: 'Framer Motion', detail: 'Polished transitions, entrance reveals, and micro-interactions.', icon: SiFramer },
-  { title: 'TypeScript', detail: 'Strong typing for predictable interfaces and scalable apps.', icon: SiTypescript },
-  { title: 'Node.js APIs', detail: 'Backend integration for full-stack web applications.', icon: SiNodedotjs },
-  { title: 'Vite Optimized', detail: 'Fast bundling, quick refresh, and performance-first development.', icon: SiVite },
+  { title: 'Java', detail: 'Core backend development with strong object-oriented design and application logic.', icon: SiJava },
+  { title: 'Spring Boot', detail: 'Building production-ready services, REST APIs, and server-side application layers.', icon: SiSpringboot },
+  { title: 'SQL / MySQL', detail: 'Designing relational schemas, queries, and database workflows for reliable data access.', icon: SiMysql },
+  { title: 'React', detail: 'Responsive component-driven UI with modern frontend state management.', icon: SiReact },
+  { title: 'Tailwind CSS', detail: 'Fast styling with responsive layouts, glassmorphism, and polished interfaces.', icon: SiTailwindcss },
+  { title: 'Git & GitHub', detail: 'Version control, collaboration, and clean code management for development teams.', icon: SiGithub },
+  { title: 'REST APIs', detail: 'Designing and consuming RESTful services for scalable frontend-backend integration.', icon: SiPostman },
+  { title: 'Full Stack Development', detail: 'End-to-end delivery of web applications across backend and frontend layers.', icon: SiNodedotjs },
 ]
 
 export default function Skills() {

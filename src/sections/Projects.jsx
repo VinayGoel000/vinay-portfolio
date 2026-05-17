@@ -4,25 +4,25 @@ import ProjectCard from '../components/ProjectCard.jsx'
 
 const projects = [
   {
-    title: 'Nebula Dashboard',
-    description: 'A premium analytics dashboard with interactive charts, dark glassmorphism, and motion-led UI.',
-    tags: ['React', 'Tailwind', 'Chart.js'],
-    github: 'https://github.com',
-    live: 'https://example.com',
+    title: 'Project Placeholder One',
+    description: 'A full-stack application example built with Java, Spring Boot, SQL, and React. Replace this card with a real project overview.',
+    tags: ['Java', 'Spring Boot', 'React'],
+    github: '#',
+    live: '#',
   },
   {
-    title: 'Launchpad App',
-    description: 'A landing page system for digital products, crafted with fast page load and polished interactions.',
-    tags: ['Vite', 'Framer Motion', 'React'],
-    github: 'https://github.com',
-    live: 'https://example.com',
+    title: 'Project Placeholder Two',
+    description: 'A scalable web application structure showcasing backend APIs, responsive UI, and data workflows.',
+    tags: ['SQL', 'React', 'REST API'],
+    github: '#',
+    live: '#',
   },
   {
-    title: 'Portfolio Experience',
-    description: 'An immersive portfolio experience with animated sections, glowing visuals and mobile-first structure.',
-    tags: ['Tailwind', 'React', 'UI'],
-    github: 'https://github.com',
-    live: 'https://example.com',
+    title: 'Project Placeholder Three',
+    description: 'A clean, reusable project card ready for your next Java web development case study.',
+    tags: ['Java', 'Full Stack', 'Responsive'],
+    github: '#',
+    live: '#',
   },
 ]
 

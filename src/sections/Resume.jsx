@@ -21,13 +21,13 @@ export default function Resume() {
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div className="space-y-6">
               <p className="text-lg leading-8 text-slate-300">
-                My resume is crafted for recruiters and technical leaders who want a polished snapshot of my web development experience, modern UI delivery, and engineering mindset.
+                My resume highlights hands-on Java web development, full-stack projects, backend and frontend skills, and a problem-solving mindset for software teams.
               </p>
               <div className="grid gap-3 text-sm text-slate-400 sm:grid-cols-2">
-                <p>• Frontend and full-stack development experience</p>
-                <p>• Product-driven web apps with responsive UI</p>
-                <p>• Clean code, modern tooling, and performance focus</p>
-                <p>• Resume optimized for developer hiring teams</p>
+                <p>• Java web development with Spring Boot and SQL</p>
+                <p>• Responsive React UI and clean frontend delivery</p>
+                <p>• Scalable backend architecture and API design</p>
+                <p>• Practical engineering mindset and problem solving</p>
               </div>
             </div>
 
