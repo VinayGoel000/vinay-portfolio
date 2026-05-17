@@ -17,7 +17,7 @@ const applications = [
       'Regular updates',
     ],
     downloadLink:
-      'https://github.com/VinayGoel000/team-iron-champ-releases/releases/download/untagged-4099a3ca4e654f9f8bad/Team.Iron.Champ.Setup.1.8.0.exe',
+      'https://github.com/VinayGoel000/team-iron-champ-releases/releases/download/v1.8.0/Team.Iron.Champ.Setup.1.8.0.exe',
     screenshot,
   },
 ]
