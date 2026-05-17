@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import SectionHeading from '../components/SectionHeading.jsx'
 import ApplicationCard from '../components/ApplicationCard.jsx'
+import screenshot from '../assets/applications/team-iron-champ-preview.png'
 
 const applications = [
   {
@@ -17,6 +18,7 @@ const applications = [
     ],
     downloadLink:
       'https://github.com/YOUR_USERNAME/YOUR_REPO/releases/download/v1.8.0/Team-Iron-Champ-Setup.exe',
+    screenshot,
   },
 ]
 
