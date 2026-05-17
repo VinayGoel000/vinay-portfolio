@@ -17,7 +17,7 @@ import { FaJava } from "react-icons/fa";
 import vinayFront from '../assets/vinay-side.jpeg'
 
 const skills = [
-  { title: 'Java', detail: 'Core backend development with strong object-oriented design and application logic.', icon: Fajava },
+  { title: 'Java', detail: 'Core backend development with strong object-oriented design and application logic.', icon: FaJava },
   { title: 'Spring Boot', detail: 'Building production-ready services, REST APIs, and server-side application layers.', icon: SiSpringboot },
   { title: 'SQL / MySQL', detail: 'Designing relational schemas, queries, and database workflows for reliable data access.', icon: SiMysql },
   { title: 'React', detail: 'Responsive component-driven UI with modern frontend state management.', icon: SiReact },
