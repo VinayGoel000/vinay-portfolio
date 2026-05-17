@@ -27,8 +27,13 @@ export default function Navbar() {
       className="sticky top-0 z-30 mx-auto w-full max-w-7xl px-6 py-5 backdrop-blur-xl"
     >
       <div className="relative mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-slate-950/30 px-5 py-3 shadow-soft">
-        <a href="#home" className="text-lg font-semibold tracking-wide text-slate-100 transition hover:text-sky-300">
-          V.</a>
+        <motion.a
+          href="#home"
+          whileHover={{ scale: 1.02 }}
+          className="text-base font-semibold tracking-wide text-slate-100 transition duration-300 hover:text-sky-300 hover:shadow-[0_0_18px_rgba(56,189,248,0.25)] sm:text-lg"
+        >
+          Vinay Goel
+        </motion.a>
 
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
