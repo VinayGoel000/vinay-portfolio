@@ -2,7 +2,18 @@ import { motion } from 'framer-motion'
 import SectionHeading from '../components/SectionHeading.jsx'
 import SkillCard from '../components/SkillCard.jsx'
 import ProfileImage from '../components/ProfileImage.jsx'
-import { SiJava, SiSpringboot, SiMysql, SiReact, SiTailwindcss, SiGithub, SiPostman, SiNodedotjs } from 'react-icons/si'
+import {
+  SiSpringboot,
+  SiMysql,
+  SiReact,
+  SiTailwindcss,
+  SiGithub,
+  SiPostman,
+  SiNodedotjs
+} from "react-icons/si";
+
+import { FaJava } from "react-icons/fa";
+
 import vinayFront from '../assets/vinay-side.jpeg'
 
 const skills = [
