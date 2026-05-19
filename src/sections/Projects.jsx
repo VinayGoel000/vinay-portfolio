@@ -4,23 +4,23 @@ import ProjectCard from '../components/ProjectCard.jsx'
 
 const projects = [
   {
-    title: 'Project Placeholder One',
-    description: 'A full-stack application example built with Java, Spring Boot, SQL, and React. Replace this card with a real project overview.',
-    tags: ['Java', 'Spring Boot', 'React'],
+    title: 'Gym Management System',
+    description: 'Manages members, attendance, subscriptions, and workflow automation.',
+    tags: ['Java', 'Spring Boot', 'SQL'],
     github: '#',
     live: '#',
   },
   {
-    title: 'Project Placeholder Two',
-    description: 'A scalable web application structure showcasing backend APIs, responsive UI, and data workflows.',
-    tags: ['SQL', 'React', 'REST API'],
+    title: 'Expense Tracker',
+    description: 'Personal finance tracking with category management and analytics.',
+    tags: ['React', 'Node.js', 'MongoDB'],
     github: '#',
     live: '#',
   },
   {
-    title: 'Project Placeholder Three',
-    description: 'A clean, reusable project card ready for your next Java web development case study.',
-    tags: ['Java', 'Full Stack', 'Responsive'],
+    title: 'Work Task Manager',
+    description: 'Organizes tasks and workflows across multiple projects.',
+    tags: ['React', 'Spring Boot', 'SQL'],
     github: '#',
     live: '#',
   },
@@ -30,16 +30,10 @@ export default function Projects() {
   return (
     <section id="projects" className="px-6 py-20">
       <div className="mx-auto max-w-7xl">
-        <SectionHeading title="Projects" subtitle="Selected work with polished visuals." />
+        <SectionHeading title="Projects" subtitle="Selected work with reusable layouts and space for future additions." />
         <div className="mt-10 grid gap-6 xl:grid-cols-3">
           {projects.map((project) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.6 }}
-            >
+            <motion.div key={project.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>
               <ProjectCard {...project} />
             </motion.div>
           ))}

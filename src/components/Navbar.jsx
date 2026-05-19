@@ -1,86 +1,84 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { FiMenu, FiX } from 'react-icons/fi'
+import { FiMenu, FiMoon, FiSun, FiX } from 'react-icons/fi'
 
 const links = [
-  { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
+  { label: 'Work', href: '#projects' },
   { label: 'Applications', href: '#applications' },
   { label: 'Contact', href: '#contact' },
 ]
 
-const navMotion = {
-  hidden: { opacity: 0, y: -16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-}
-
-export default function Navbar() {
+export default function Navbar({ theme, onToggleTheme }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <motion.header
-      id="navbar"
-      initial="hidden"
-      animate="visible"
-      variants={navMotion}
-      className="sticky top-0 z-30 mx-auto w-full max-w-7xl px-6 py-5 backdrop-blur-xl"
-    >
-      <div className="relative mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-slate-950/30 px-5 py-3 shadow-soft">
-        <motion.a
-          href="#home"
-          whileHover={{ scale: 1.02 }}
-          className="text-base font-semibold tracking-wide text-slate-100 transition duration-300 hover:text-sky-300 hover:shadow-[0_0_18px_rgba(56,189,248,0.25)] sm:text-lg"
-        >
-          Vinay Goel
-        </motion.a>
+    <motion.header className="sticky top-0 z-50 border-b border-white/5 bg-[color:var(--bg)]/85 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <a href="#home" className="flex items-center gap-1 text-xl font-semibold tracking-tight text-[color:var(--text)]">
+          <span className="font-serif text-2xl">Vinay</span>
+          <span className="text-[color:var(--accent)]">.</span>
+        </a>
 
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm text-slate-300 transition hover:text-cyan-200"
-            >
+            <a key={link.label} href={link.href} className="text-sm text-[color:var(--muted)] transition hover:text-[color:var(--text)]">
               {link.label}
             </a>
           ))}
+          <button
+            type="button"
+            onClick={onToggleTheme}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[color:var(--text)] transition hover:border-[color:var(--accent)]/40"
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <FiSun /> : <FiMoon />}
+          </button>
         </nav>
 
-        <button
-          type="button"
-          onClick={() => setOpen((value) => !value)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-slate-900/90 text-slate-200 transition hover:border-sky-400/40 hover:text-sky-200 md:hidden"
-          aria-label="Toggle navigation"
-        >
-          {open ? <FiX size={22} /> : <FiMenu size={22} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            type="button"
+            onClick={onToggleTheme}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[color:var(--text)]"
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <FiSun /> : <FiMoon />}
+          </button>
+          <button
+            type="button"
+            onClick={() => setOpen((value) => !value)}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[color:var(--text)]"
+            aria-label="Toggle navigation"
+          >
+            {open ? <FiX /> : <FiMenu />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
-        {open && (
+        {open ? (
           <motion.nav
-            initial={{ opacity: 0, y: -12 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            className="mt-3 rounded-3xl border border-white/10 bg-slate-950/90 p-5 shadow-soft md:hidden"
+            exit={{ opacity: 0, y: -8 }}
+            className="border-t border-white/5 bg-[color:var(--bg)] px-6 py-4 md:hidden"
           >
-            <ul className="flex flex-col gap-3">
+            <div className="mx-auto flex max-w-7xl flex-col gap-2">
               {links.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="block rounded-2xl px-4 py-3 text-sm text-slate-200 transition hover:bg-slate-900/80 hover:text-sky-200"
-                  >
-                    {link.label}
-                  </a>
-                </li>
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-2xl px-4 py-3 text-sm text-[color:var(--muted)] transition hover:bg-white/5 hover:text-[color:var(--text)]"
+                >
+                  {link.label}
+                </a>
               ))}
-            </ul>
+            </div>
           </motion.nav>
-        )}
+        ) : null}
       </AnimatePresence>
     </motion.header>
   )
