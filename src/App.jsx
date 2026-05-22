@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import Navbar from './components/Navbar.jsx'
 import Hero from './sections/Hero.jsx'
 import About from './sections/About.jsx'
@@ -10,22 +10,26 @@ import Contact from './sections/Contact.jsx'
 import Footer from './sections/Footer.jsx'
 
 const THEME_KEY = 'vinay-portfolio-theme'
+const THEMES = ['dark', 'light', 'purple']
 
 function App() {
   const [theme, setTheme] = useState(() => {
     if (typeof window === 'undefined') return 'dark'
     const savedTheme = window.localStorage.getItem(THEME_KEY)
-    return savedTheme === 'light' ? 'light' : 'dark'
+    return THEMES.includes(savedTheme) ? savedTheme : 'dark'
   })
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.documentElement.dataset.theme = theme
     window.localStorage.setItem(THEME_KEY, theme)
   }, [theme])
 
   return (
     <div className="min-h-screen">
-      <Navbar theme={theme} onToggleTheme={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))} />
+      <Navbar
+        theme={theme}
+        onThemeChange={setTheme}
+      />
       <main>
         <Hero />
         <section className="px-6 pb-4 pt-0">
