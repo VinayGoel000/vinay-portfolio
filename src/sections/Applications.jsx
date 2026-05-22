@@ -7,9 +7,9 @@ const applications = [
   {
     name: 'Team Iron Champ',
     description: 'Windows desktop automation and management application designed for workflow efficiency, operational control, and premium desktop usability.',
-    version: '1.8.0',
-    features: ['Desktop automation tools', 'Fast performance', 'Workflow optimization', 'User-friendly interface', 'Windows desktop support', 'Regular updates'],
-    downloadLink: 'https://github.com/VinayGoel000/team-iron-champ-releases/releases/download/v1.8.0/Team.Iron.Champ.Setup.1.8.0.exe',
+    version: '2.0.3',
+    features: ['Desktop automation tools', 'Fast performance', 'Biometric Attendance Automation', 'User-friendly interface', 'Windows desktop ', 'Regular updates'],
+    downloadLink: 'https://github.com/VinayGoel000/team-iron-champ-releases/releases/download/v2.0.3/Team.Iron.Champ.Setup.2.0.3.exe',
     screenshot,
   },
 ]
