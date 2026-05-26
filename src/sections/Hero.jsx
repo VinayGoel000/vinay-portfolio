@@ -1,25 +1,17 @@
 import { motion } from 'framer-motion'
 import { FiDownload, FiEye } from 'react-icons/fi'
-import { FaLinkedin } from 'react-icons/fa'
-import { HiOutlineMail } from 'react-icons/hi'
-import { SiLeetcode } from 'react-icons/si'
 import ActionButton from '../components/ActionButton.jsx'
 import ProfileImage from '../components/ProfileImage.jsx'
 import vinayFront from '../assets/vinay-front.jpeg'
 
 const resumeUrl = '/resume/VinayGoelResume.pdf'
 
-const socials = [
-  { name: 'Email', href: 'mailto:work.vinaygoel@gmail.com', icon: HiOutlineMail },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/vinay-goel-691960278', icon: FaLinkedin },
-  { name: 'LeetCode', href: 'https://leetcode.com/u/FvfnNjdyCP/', icon: SiLeetcode },
-]
-
 export default function Hero() {
   return (
     <section id="home" className="px-6 pb-12 pt-10 sm:pt-16">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl">
+          <p className="text-sm font-medium uppercase tracking-[0.35em] text-[color:var(--accent)]">Vinay Goel</p>
           <p className="text-sm uppercase tracking-[0.3em] text-[color:var(--muted)]">Full-Stack Developer</p>
           <h1 className="mt-5 text-5xl font-semibold tracking-tight text-[color:var(--text)] sm:text-6xl lg:text-7xl">
             I build things that ship and scale.
@@ -37,17 +29,6 @@ export default function Hero() {
             <ActionButton href={resumeUrl} icon={FiDownload} download className="text-[color:var(--text)]">
               View Resume
             </ActionButton>
-          </div>
-          <div className="mt-8 flex flex-wrap gap-3">
-            {socials.map((item) => {
-              const Icon = item.icon
-              return (
-                <a key={item.name} href={item.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-[color:var(--muted)] transition hover:text-[color:var(--text)]">
-                  <Icon className="h-4 w-4 text-[color:var(--accent)]" />
-                  {item.name}
-                </a>
-              )
-            })}
           </div>
         </motion.div>
 
