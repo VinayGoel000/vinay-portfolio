@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { FiCode, FiMenu, FiMoon, FiSun, FiX } from 'react-icons/fi'
 
 const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Work', href: '#projects' },
-  { label: 'Applications', href: '#applications' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '/#about' },
+  { label: 'Skills', href: '/#skills' },
+  { label: 'Work', href: '/#projects' },
+  { label: 'Applications', href: '/#applications' },
+  { label: 'Contact', href: '/#contact' },
+  { label: 'Certificates', href: '/certificates' },
 ]
 
 const themeOrder = ['dark', 'light', 'purple']
@@ -18,7 +20,7 @@ function ThemeIcon({ theme }) {
   return <FiMoon />
 }
 
-export default function Navbar({ theme, onThemeChange }) {
+export default function Navbar({ theme, onThemeChange, currentPath }) {
   const [open, setOpen] = useState(false)
 
   const cycleTheme = () => {
@@ -36,9 +38,13 @@ export default function Navbar({ theme, onThemeChange }) {
 
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
-            <a key={link.label} href={link.href} className="text-sm text-[color:var(--muted)] transition hover:text-[color:var(--text)]">
+            <Link
+              key={link.label}
+              to={link.href}
+              className={`text-sm transition hover:text-[color:var(--text)] ${currentPath === '/certificates' && link.label === 'Certificates' ? 'text-[color:var(--text)]' : 'text-[color:var(--muted)]'}`}
+            >
               {link.label}
-            </a>
+            </Link>
           ))}
           <motion.button
             type="button"
@@ -84,14 +90,14 @@ export default function Navbar({ theme, onThemeChange }) {
           >
             <div className="mx-auto flex max-w-7xl flex-col gap-2">
               {links.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setOpen(false)}
                   className="rounded-2xl px-4 py-3 text-sm text-[color:var(--muted)] transition hover:bg-white/5 hover:text-[color:var(--text)]"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.nav>
