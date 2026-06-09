@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FiArrowUpRight, FiClock, FiGlobe } from 'react-icons/fi'
+import { FiArrowUpRight, FiClock, FiGlobe, FiPlay } from 'react-icons/fi'
 
 export default function FeaturedProjectCard({ project, onLearnMore }) {
   return (
@@ -49,6 +49,16 @@ export default function FeaturedProjectCard({ project, onLearnMore }) {
             >
               <FiGlobe /> Live Demo
             </a>
+            {project.demoVideo && (
+              <a
+                href={project.demoVideo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-[color:var(--text)] transition duration-300 hover:scale-[1.02] hover:border-white/20 hover:bg-white/10"
+              >
+                <FiPlay /> Watch Demo
+              </a>
+            )}
             <button
               type="button"
               onClick={onLearnMore}
