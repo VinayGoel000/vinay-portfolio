@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FiAward, FiDownload, FiExternalLink, FiFileText, FiShield, FiStar, FiZap } from 'react-icons/fi'
+import { FiAward, FiDownload, FiExternalLink, FiFileText, FiShield, FiZap } from 'react-icons/fi'
 
 const certificates = [
   {
@@ -15,12 +15,6 @@ const certificates = [
     certificateUrl: '/certificates/introduction-to-deep-learning-certificate.pdf',
     verificationUrl: 'https://verify.onwingspan.com',
   },
-]
-
-const highlights = [
-  { label: 'Recognition', value: 'Professional learning proof' },
-  { label: 'Format', value: 'Downloadable PDF asset' },
-  { label: 'Scalable', value: 'Ready for future certificates' },
 ]
 
 function CertificateCard({ certificate, index }) {
@@ -140,52 +134,6 @@ export default function Certificates() {
     <div className="relative overflow-hidden px-6 py-10 md:py-16">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(124,58,237,0.18),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(232,201,122,0.14),_transparent_24%)]" />
       <div className="mx-auto max-w-7xl">
-        <motion.section
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_30px_120px_rgba(2,6,23,0.45)] backdrop-blur-2xl md:p-10"
-        >
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(168,85,247,0.08),transparent_35%,rgba(232,201,122,0.05))]" />
-          <div className="relative grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-            <div>
-              <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-[color:var(--muted)]">
-                <FiStar className="text-[color:var(--accent)]" />
-                Certifications showcase
-              </p>
-              <h1 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-[color:var(--text)] md:text-6xl">
-                Learning milestones, presented like real achievements
-              </h1>
-              <p className="mt-5 max-w-2xl text-base leading-8 text-[color:var(--muted)] md:text-lg">
-                A curated space for verified learning proof, built to feel polished now and easy to expand later as more certificates are earned.
-              </p>
-              <div className="mt-8 grid gap-3 sm:grid-cols-3">
-                {highlights.map((item) => (
-                  <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                    <p className="text-xs uppercase tracking-[0.24em] text-[color:var(--muted)]">{item.label}</p>
-                    <p className="mt-2 text-sm font-medium text-[color:var(--text)]">{item.value}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="rounded-[1.75rem] border border-white/10 bg-[color:var(--surface-strong)] p-6 shadow-soft backdrop-blur-xl">
-              <p className="text-sm uppercase tracking-[0.28em] text-[color:var(--muted)]">How this scales</p>
-              <div className="mt-5 space-y-3">
-                {[
-                  'Each certificate lives as a data object, so future entries only need a new record.',
-                  'Buttons use the public assets path, which keeps Vercel deployment simple and reliable.',
-                  'Card styling supports dark, light, and purple themes without changing the layout.',
-                ].map((item) => (
-                  <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-7 text-[color:var(--muted)]">
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.section>
-
         <section className="mt-8 grid gap-6">
           {certificates.map((certificate, index) => (
             <CertificateCard key={certificate.title} certificate={certificate} index={index} />

@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom'
 import { FiCode, FiMenu, FiMoon, FiSun, FiX } from 'react-icons/fi'
 
 const links = [
+  { label: 'Home', href: '/#home' },
   { label: 'About', href: '/#about' },
   { label: 'Skills', href: '/#skills' },
-  { label: 'Work', href: '/#projects' },
+  { label: 'Projects', href: '/projects' },
   { label: 'Applications', href: '/#applications' },
-  { label: 'Contact', href: '/#contact' },
   { label: 'Certificates', href: '/certificates' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 const themeOrder = ['dark', 'light', 'purple']
@@ -41,7 +42,7 @@ export default function Navbar({ theme, onThemeChange, currentPath }) {
             <Link
               key={link.label}
               to={link.href}
-              className={`text-sm transition hover:text-[color:var(--text)] ${currentPath === '/certificates' && link.label === 'Certificates' ? 'text-[color:var(--text)]' : 'text-[color:var(--muted)]'}`}
+              className={`text-sm transition hover:text-[color:var(--text)] ${(currentPath === link.href || (link.href === '/projects' && currentPath === '/projects') || (link.href === '/certificates' && currentPath === '/certificates')) ? 'text-[color:var(--text)]' : 'text-[color:var(--muted)]'}`}
             >
               {link.label}
             </Link>

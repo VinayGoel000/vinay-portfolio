@@ -20,13 +20,13 @@ export default function Hero() {
             Java web developer focused on React frontend development, Spring Boot, and SQL-backed applications. I love learning new technologies, finishing what I start, and building scalable products with premium quality.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <ActionButton href="#contact" className="border-[color:var(--accent)]/30 bg-[color:var(--accent)]/10 text-[color:var(--text)]">
+            <ActionButton href="mailto:work.vinaygoel@gmail.com" className="border-[color:var(--accent)]/30 bg-[color:var(--accent)]/10 text-[color:var(--text)]">
               Let&apos;s work together
             </ActionButton>
-            <ActionButton href="#projects" icon={FiEye} className="text-[color:var(--text)]">
-              See my work
+            <ActionButton href={resumeUrl} icon={FiEye} className="text-[color:var(--text)]">
+              See My Resume
             </ActionButton>
-            <ActionButton href={resumeUrl} icon={FiDownload} download className="text-[color:var(--text)]">
+            <ActionButton href={resumeUrl} icon={FiDownload} className="text-[color:var(--text)]">
               View Resume
             </ActionButton>
           </div>

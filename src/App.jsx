@@ -4,12 +4,13 @@ import Navbar from './components/Navbar.jsx'
 import Hero from './sections/Hero.jsx'
 import About from './sections/About.jsx'
 import Skills from './sections/Skills.jsx'
-import Projects from './sections/Projects.jsx'
 import Applications from './sections/Applications.jsx'
+import Projects from './sections/Projects.jsx'
 import Resume from './sections/Resume.jsx'
 import Contact from './sections/Contact.jsx'
 import Footer from './sections/Footer.jsx'
 import Certificates from './pages/Certificates.jsx'
+import ProjectsPage from './pages/ProjectsPage.jsx'
 
 const THEME_KEY = 'vinay-portfolio-theme'
 const THEMES = ['dark', 'light', 'purple']
@@ -57,18 +58,20 @@ function App() {
                 </section>
                 <About />
                 <Skills />
-                <Projects />
                 <Applications />
+                <Projects />
                 <Resume />
                 <Contact />
               </>
             )}
           />
+          <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/certificates" element={<Certificates />} />
         </Routes>
       </main>
       <Routes>
         <Route path="/" element={<Footer />} />
+        <Route path="/projects" element={null} />
         <Route path="/certificates" element={null} />
       </Routes>
     </div>
