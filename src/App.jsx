@@ -3,6 +3,8 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import Hero from './sections/Hero.jsx'
 import About from './sections/About.jsx'
+import Journey from './sections/Journey.jsx'
+import AuraBackground from './components/AuraBackground.jsx'
 import Skills from './sections/Skills.jsx'
 import Applications from './sections/Applications.jsx'
 import Projects from './sections/Projects.jsx'
@@ -30,6 +32,8 @@ function App() {
 
   return (
     <div className="min-h-screen">
+      <AuraBackground />
+      <div className="relative z-[1]">
       <Navbar
         theme={theme}
         onThemeChange={setTheme}
@@ -57,6 +61,7 @@ function App() {
                   </div>
                 </section>
                 <About />
+                <Journey />
                 <Skills />
                 <Applications />
                 <Projects />
@@ -74,6 +79,7 @@ function App() {
         <Route path="/projects" element={null} />
         <Route path="/certificates" element={null} />
       </Routes>
+      </div>
     </div>
   )
 }
